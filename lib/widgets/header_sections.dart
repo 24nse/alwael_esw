@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:profile_barsh_web/utlis/app_colors.dart';
+import 'package:profile_barsh_web/utlis/app_text_styles.dart';
 import '../utlis/app_router.dart';
 
 class HeaderSection extends StatelessWidget {
@@ -25,12 +26,13 @@ class HeaderSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
       decoration: BoxDecoration(
-        color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.1),
+            color: AppColors.kBackgroundColor2,
+
+            // color: Colors.grey.withOpacity(0.1),
             spreadRadius: 1,
-            blurRadius: 10,
+            blurRadius: 2,
             offset: const Offset(0, 2),
           ),
         ],
@@ -39,26 +41,22 @@ class HeaderSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Logo
-          Row(
-            children: [
-              Text(
-                logoPrefix,
-                style: GoogleFonts.cairo(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: logoPrefixColor,
-                ),
-              ),
-              Text(
-                logoMain,
-                style: GoogleFonts.cairo(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: logoMainColor,
-                ),
-              ),
-            ],
-          ),
+          SizedBox(
+              height: 90,
+              width: 200,
+              child: Image.asset('assets/images/logo.png')),
+          // Row(
+          //   children: [
+          //     Text(
+          //       logoPrefix,
+          //       style:AppTextStyles.styleBold29(context)
+          //     ),
+          //     Text(
+          //       logoMain,
+          //       style:AppTextStyles.styleBold29(context).copyWith(color: AppColors.kPrimaryColor)
+          //     ),
+          //   ],
+          // ),
 
           // Navigation + optional trailing button
           Row(
@@ -97,10 +95,7 @@ class _NavItem extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         label,
-        style: GoogleFonts.cairo(
-          fontSize: 16,
-          color: const Color(0xFF1E3A8A),
-        ),
+        style: AppTextStyles.styleRegular16(context)
       ),
     );
   }

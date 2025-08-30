@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:profile_barsh_web/utlis/app_colors.dart';
 import 'package:profile_barsh_web/utlis/app_text_styles.dart';
 import 'package:profile_barsh_web/utlis/responsive.dart';
-import 'package:profile_barsh_web/widgets/header_sections.dart';
-import '../utlis/app_router.dart';
 import '../widgets/widgets.dart';
 
 class HomePage extends StatefulWidget {
@@ -78,8 +75,14 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildHeroSection() {
     return Container(
-      color: AppColors.kBackgroundColor,
-      height: context.getHeight(),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          fit: BoxFit.fitWidth,
+          image: AssetImage('assets/images/p3.jpg'),
+        )
+      ),
+      height: context.getHeight(ratioDesktop: 0.8,ratioMobile: 0.8,ratioTablet: 0.8),
+      width: double.infinity,
       child: CarouselSlider(
         items: _heroSlides.map((slide) {
           return Padding(
@@ -112,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           slide.title,
                           key: ValueKey(slide.title),
-                          style: AppTextStyles.styleBold36(context),
+                          style: AppTextStyles.styleBold24(context),
                           textAlign: TextAlign.right,
                         ),
                       ),
@@ -138,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                         child: Text(
                           slide.description,
                           key: ValueKey(slide.description),
-                          style: AppTextStyles.styleRegular18(context),
+                          style: AppTextStyles.styleRegular16(context),
 
                           textAlign: TextAlign.right,
                         ),
@@ -163,7 +166,7 @@ class _HomePageState extends State<HomePage> {
                               width: context.getWidth(ratioDesktop: 0.05,ratioTablet: 0.05,ratioMobile: 0.05),
                               height: context.getHeight(ratioDesktop: 0.05,ratioTablet: 0.05,ratioMobile: 0.05),
                               decoration: const BoxDecoration(
-                                color: Color(0xFFDC2626),
+                                color: AppColors.kPrimaryColor,
                                 shape: BoxShape.circle,
                               ),
                               child: Center(
@@ -175,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                             )
                                 : Text(
                               label,
-                              style:AppTextStyles.styleRegular16(context),
+                              style:AppTextStyles.styleRegular12(context),
 
                             ),
                           );
@@ -191,35 +194,35 @@ class _HomePageState extends State<HomePage> {
                   flex: 1,
                   child: Stack(
                     children: [
-                      ClipRRect(
-                        borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(20),
-                          bottomRight: Radius.circular(20),
-                        ),
-                        child: TweenAnimationBuilder(
-                          duration: const Duration(milliseconds: 1200),
-                          tween: Tween<double>(begin: 1.0, end: 1.05),
-                          curve: Curves.easeInOut,
-                          builder: (context, scale, child) {
-                            return Transform.scale(
-                              scale: scale,
-                              child: child,
-                            );
-                          },
-                          child: Image.asset(
-                            slide.imagePath,
-                            fit: BoxFit.cover,
-                            key: ValueKey(slide.imagePath),
-                          ),
-                        ),
-                      ),
+                      // ClipRRect(
+                      //   borderRadius: const BorderRadius.only(
+                      //     topLeft: Radius.circular(20),
+                      //     bottomLeft: Radius.circular(20),
+                      //   ),
+                      //   child: TweenAnimationBuilder(
+                      //     duration: const Duration(milliseconds: 1200),
+                      //     tween: Tween<double>(begin: 1.0, end: 1.05),
+                      //     curve: Curves.easeInOut,
+                      //     builder: (context, scale, child) {
+                      //       return Transform.scale(
+                      //         scale: scale,
+                      //         child: child,
+                      //       );
+                      //     },
+                      //     child: Image.asset(
+                      //       slide.imagePath,
+                      //       fit: BoxFit.cover,
+                      //       key: ValueKey(slide.imagePath),
+                      //     ),
+                      //   ),
+                      // ),
                       Positioned(
                         bottom: 20,
                         left: 20,
                         child: Container(
                           padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFDC2626),
+                            color:  AppColors.kPrimaryColor,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Column(
@@ -241,11 +244,8 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   const SizedBox(width: 10),
                                   Text(
-                                    'الموقع: 123 أي مكان',
-                                    style: GoogleFonts.cairo(
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                    ),
+                                    'الموقع: ابن سيناء بجانب بنك الكريمي',
+                                    style:AppTextStyles.styleRegular14(context)
                                   ),
                                 ],
                               ),
@@ -267,11 +267,8 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                   const SizedBox(width: 10),
                                   Text(
-                                    'رقم الهاتف: (+123)4567890',
-                                    style: GoogleFonts.cairo(
-                                      fontSize: 14,
-                                      color: Colors.white,
-                                    ),
+                                    'رقم الهاتف:167 496 770 (+967)',
+                                    style:AppTextStyles.styleRegular14(context)
                                   ),
                                 ],
                               ),
@@ -311,7 +308,6 @@ class _HomePageState extends State<HomePage> {
   Widget _buildAboutSection() {
     return Container(
       padding: const EdgeInsets.all(80),
-      color: Colors.white,
       child: Row(
         children: [
           // Right content
@@ -322,21 +318,13 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   'نظرة أقرب إلى مؤسستنا للمقاولات',
-                  style: GoogleFonts.cairo(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF1E3A8A),
-                  ),
+                  style: AppTextStyles.styleBold24(context),
                   textAlign: TextAlign.right,
                 ),
                 const SizedBox(height: 20),
                 Text(
                   'مؤسسة بارشيد للمقاولات العامة متخصصة في تنفيذ مشاريع البناء السكني والتجاري والبنية التحتية، مع التزام كامل بالجودة والسلامة وتسليم المشاريع في وقتها.',
-                  style: GoogleFonts.cairo(
-                    fontSize: 18,
-                    color: Colors.grey[700],
-                    height: 1.6,
-                  ),
+                  style:AppTextStyles.styleRegular16(context),
                   textAlign: TextAlign.right,
                 ),
                 const SizedBox(height: 40),
@@ -349,11 +337,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 30),
                 Text(
                   'المزيد عنا',
-                  style: GoogleFonts.cairo(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFFDC2626),
-                  ),
+                  style:AppTextStyles.styleRegular14(context)
                 ),
               ],
             ),
@@ -399,11 +383,7 @@ class _HomePageState extends State<HomePage> {
                   right: 70,
                   child: Text(
                     'شاهد فيديو الشركة',
-                    style: GoogleFonts.cairo(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
+                    style: AppTextStyles.styleMedium12(context)
                   ),
                 ),
               ],
@@ -419,7 +399,6 @@ class _HomePageState extends State<HomePage> {
   Widget _buildValuesSection() {
     return Container(
       padding: const EdgeInsets.all(80),
-      color: const Color(0xFFF8F9FA),
       child: Row(
         children: [
           // Right content
@@ -430,21 +409,12 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   'قيمنا',
-                  style: GoogleFonts.cairo(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFFDC2626),
-                    letterSpacing: 2,
-                  ),
+                  style:AppTextStyles.styleMedium14(context)
                 ),
                 const SizedBox(height: 10),
                 Text(
                   'نحن نؤمن بهذه الجودة',
-                  style: GoogleFonts.cairo(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF1E3A8A),
-                  ),
+                  style:AppTextStyles.styleBold20(context),
                   textAlign: TextAlign.right,
                 ),
                 const SizedBox(height: 40),
@@ -472,11 +442,7 @@ class _HomePageState extends State<HomePage> {
               child: Center(
                 child: Text(
                   '10 سنوات من الخبرة\nفي صناعة الطاقة',
-                  style: GoogleFonts.cairo(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  style:AppTextStyles.styleBold20(context),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -492,26 +458,16 @@ class _HomePageState extends State<HomePage> {
   Widget _buildServicesSection() {
     return Container(
       padding: const EdgeInsets.all(80),
-      color: Colors.white,
       child: Column(
         children: [
           Text(
             'خدماتنا',
-            style: GoogleFonts.cairo(
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              color: const Color(0xFFDC2626),
-              letterSpacing: 2,
-            ),
+            style:AppTextStyles.styleBold20(context)
           ),
           const SizedBox(height: 10),
           Text(
             'حلول المقاولات العامة والبناء',
-            style: GoogleFonts.cairo(
-              fontSize: 36,
-              fontWeight: FontWeight.bold,
-              color: const Color(0xFF1E3A8A),
-            ),
+            style: AppTextStyles.styleBold24(context)
           ),
           const SizedBox(height: 60),
           Row(
@@ -551,7 +507,6 @@ class _HomePageState extends State<HomePage> {
   Widget _buildTestimonialsSection() {
     return Container(
       padding: const EdgeInsets.all(80),
-      color: const Color(0xFFF8F9FA),
       child: Row(
         children: [
           // Right content
@@ -562,21 +517,12 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   'آراء العملاء',
-                  style: GoogleFonts.cairo(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFFDC2626),
-                    letterSpacing: 2,
-                  ),
+                  style:AppTextStyles.styleBold20(context)
                 ),
                 const SizedBox(height: 10),
                 Text(
                   'ماذا يقول عملاؤنا عنا',
-                  style: GoogleFonts.cairo(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF1E3A8A),
-                  ),
+                  style: AppTextStyles.styleBold24(context),
                   textAlign: TextAlign.right,
                 ),
                 const SizedBox(height: 30),
@@ -592,22 +538,13 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 20),
                 Text(
                   '"تنفيذ المؤسسة كان دقيقاً ومواعيد التسليم منضبطة وجودة البناء ممتازة. تجربة رائعة في مشروعنا التجاري."',
-                  style: GoogleFonts.cairo(
-                    fontSize: 18,
-                    color: Colors.grey[700],
-                    height: 1.6,
-                    fontStyle: FontStyle.italic,
-                  ),
+                  style: AppTextStyles.styleRegular18(context).copyWith(fontStyle: FontStyle.italic),
                   textAlign: TextAlign.right,
                 ),
                 const SizedBox(height: 20),
                 Text(
                   'أحمد بارشيد، مالك مشروع تجاري',
-                  style: GoogleFonts.cairo(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFF1E3A8A),
-                  ),
+                  style:AppTextStyles.styleBold20(context)
                 ),
               ],
             ),
@@ -639,7 +576,6 @@ class _HomePageState extends State<HomePage> {
   Widget _buildFAQSection() {
     return Container(
       padding: const EdgeInsets.all(80),
-      color: Colors.white,
       child: Row(
         children: [
           // Right FAQ
@@ -674,21 +610,12 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   'الأسئلة الشائعة',
-                  style: GoogleFonts.cairo(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: const Color(0xFFDC2626),
-                    letterSpacing: 2,
-                  ),
+                  style: AppTextStyles.styleBold20(context)
                 ),
                 const SizedBox(height: 10),
                 Text(
                   'أسئلة من الناس',
-                  style: GoogleFonts.cairo(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF1E3A8A),
-                  ),
+                  style:AppTextStyles.styleBold24(context),
                   textAlign: TextAlign.right,
                 ),
                 const SizedBox(height: 40),
@@ -706,7 +633,6 @@ class _HomePageState extends State<HomePage> {
   Widget _buildNewsletterSection() {
     return Container(
       padding: const EdgeInsets.all(80),
-      color: const Color(0xFFF8F9FA),
       child: Row(
         children: [
           // Right content
@@ -717,20 +643,13 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   'هل أنت مستعد لتحفيز مستقبلك بالطاقة؟',
-                  style: GoogleFonts.cairo(
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF1E3A8A),
-                  ),
+                  style: AppTextStyles.styleBold24(context),
                   textAlign: TextAlign.right,
                 ),
                 const SizedBox(height: 20),
                 Text(
                   'اشترك في نشرتنا الإخبارية للمزيد من التحديثات.',
-                  style: GoogleFonts.cairo(
-                    fontSize: 18,
-                    color: Colors.grey[700],
-                  ),
+                  style:AppTextStyles.styleBold20(context),
                   textAlign: TextAlign.right,
                 ),
                 const SizedBox(height: 30),
@@ -760,10 +679,7 @@ class _HomePageState extends State<HomePage> {
                         margin: const EdgeInsets.only(left: 20),
                         child: Text(
                           'شعار شركة',
-                          style: GoogleFonts.cairo(
-                            fontSize: 16,
-                            color: Colors.grey[500],
-                          ),
+                          style: AppTextStyles.styleRegular10(context),
                         ),
                       )),
                 ),

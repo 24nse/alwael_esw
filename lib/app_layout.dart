@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile_barsh_web/utlis/app_colors.dart';
 import 'package:profile_barsh_web/widgets/footer_sections.dart';
 import 'package:profile_barsh_web/widgets/header_sections.dart';
 import 'package:profile_barsh_web/widgets/primary_button.dart';
@@ -12,12 +13,13 @@ class AppLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.kBackgroundColor,
       body: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child:   HeaderSection(
               logoPrefix: 'مؤسسة',
-              logoMain: 'بارشيد',
+              logoMain: 'الوعل',
               navItems: [
                 HeaderNavItem(
                   label: 'الرئيسية',
