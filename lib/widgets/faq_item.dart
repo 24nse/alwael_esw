@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../utlis/app_colors.dart';
 import 'app_colors.dart';
 
 class PetroFaqItem extends StatelessWidget {
@@ -15,7 +16,7 @@ class PetroFaqItem extends StatelessWidget {
       decoration: BoxDecoration(border: Border.all(color: Colors.grey[300]!), borderRadius: BorderRadius.circular(10)),
       child: ExpansionTile(
         initiallyExpanded: initiallyExpanded,
-        title: Text(question, style: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w500, color: PetroColors.textDark), textAlign: TextAlign.right),
+        title: Text(question, style: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.kTextColor), textAlign: TextAlign.right),
         children: [
           Padding(
             padding: const EdgeInsets.all(20),

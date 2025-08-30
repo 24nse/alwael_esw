@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:profile_barsh_web/utlis/app_colors.dart';
 import 'app_colors.dart';
 
 class ProgressBar extends StatelessWidget {
@@ -16,9 +17,9 @@ class ProgressBar extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(label, style: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w500, color: PetroColors.textDark)),
+            Text(label, style: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.kTextColor)),
 
-            Text('${(value * 100).toInt()}%', style: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w500, color: PetroColors.red)),
+            Text('${(value * 100).toInt()}%', style: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.kPrimaryColor)),
           ],
         ),
         const SizedBox(height: 8),
@@ -29,7 +30,7 @@ class ProgressBar extends StatelessWidget {
             alignment: Alignment.centerLeft,
 
             widthFactor: value,
-            child: Container(decoration: BoxDecoration(color: PetroColors.red, borderRadius: BorderRadius.circular(4))),
+            child: Container(decoration: BoxDecoration(color: AppColors.kPrimaryColor, borderRadius: BorderRadius.circular(4))),
           ),
         ),
       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:profile_barsh_web/utlis/app_colors.dart';
 import 'app_colors.dart';
 
 class ServiceCard extends StatelessWidget {
@@ -24,17 +25,17 @@ class ServiceCard extends StatelessWidget {
           Container(
             width: 60,
             height: 60,
-            decoration: BoxDecoration(color: PetroColors.red.withOpacity(0.1), borderRadius: BorderRadius.circular(15)),
-            child: Icon(icon, size: 30, color: PetroColors.red),
+            decoration: BoxDecoration(color: AppColors.kPrimaryColor.withOpacity(0.1), borderRadius: BorderRadius.circular(15)),
+            child: Icon(icon, size: 30, color: AppColors.kPrimaryColor),
           ),
           const SizedBox(height: 20),
-          Text(title, style: GoogleFonts.cairo(fontSize: 20, fontWeight: FontWeight.bold, color: PetroColors.textDark)),
+          Text(title, style: GoogleFonts.cairo(fontSize: 20, fontWeight: FontWeight.bold, color: AppColors.kTextColor)),
           const SizedBox(height: 15),
           Text(description, style: GoogleFonts.cairo(fontSize: 16, color: Colors.grey[700], height: 1.5), textAlign: TextAlign.center),
           const SizedBox(height: 20),
           InkWell(
             onTap: onLearnMore,
-            child: Text('اعرف المزيد', style: GoogleFonts.cairo(fontSize: 14, fontWeight: FontWeight.w600, color: PetroColors.red)),
+            child: Text('اعرف المزيد', style: GoogleFonts.cairo(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.kPrimaryColor)),
           )
         ],
       ),

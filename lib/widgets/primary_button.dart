@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../utlis/app_colors.dart';
 import 'app_colors.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -17,7 +18,7 @@ class PrimaryButton extends StatelessWidget {
       borderRadius: borderRadius as BorderRadius?,
       child: Container(
         padding: padding,
-        decoration: BoxDecoration(color: PetroColors.red, borderRadius: borderRadius),
+        decoration: BoxDecoration(color: AppColors.kPrimaryColor, borderRadius: borderRadius),
         child: Text(label, style: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white)),
       ),
     );

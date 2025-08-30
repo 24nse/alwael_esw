@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:profile_barsh_web/utlis/app_colors.dart';
 import 'package:profile_barsh_web/utlis/app_text_styles.dart';
 import 'package:profile_barsh_web/utlis/responsive.dart';
 import 'package:profile_barsh_web/widgets/header_sections.dart';
@@ -77,7 +78,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildHeroSection() {
     return Container(
-      color: PetroColors.container,
+      color: AppColors.kBackgroundColor,
       height: context.getHeight(),
       child: CarouselSlider(
         items: _heroSlides.map((slide) {

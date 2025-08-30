@@ -12,7 +12,7 @@ abstract class AppTextStyles {
         bool underLine = false,
         FontWeight? fontWeight}) {
     return TextStyle(
-        color: color ?? kTextColor,
+        color: color ??AppColors.kTextColor,
         fontSize: getResponsiveFontSize(context, fontSize: fontSize ?? 12),
         fontFamily: AppFonts.cairo,
         fontWeight: fontWeight ?? FontWeight.w300,
@@ -26,7 +26,7 @@ abstract class AppTextStyles {
         bool underLine = false,
         FontWeight? fontWeight}) {
     return TextStyle(
-        color: color ?? kTextColor,
+        color: color ??AppColors.kTextColor,
         fontSize: getResponsiveFontSize(context, fontSize: fontSize ?? 14),
         fontFamily: AppFonts.cairo,
         fontWeight: fontWeight ?? FontWeight.w300,
@@ -42,7 +42,7 @@ abstract class AppTextStyles {
         FontWeight? fontWeight,
       }) {
     return TextStyle(
-        color: color ?? kTextColor,
+        color: color ??AppColors.kTextColor,
         fontSize: getResponsiveFontSize(context, fontSize: fontSize ?? 12),
         fontFamily: AppFonts.cairo,
         fontWeight: fontWeight ?? FontWeight.w400,
@@ -56,7 +56,7 @@ abstract class AppTextStyles {
         bool underLine = false,
         FontWeight? fontWeight}) {
     return TextStyle(
-        color: color ?? kTextColor,
+        color: color ?? AppColors.kTextColor,
         fontSize: getResponsiveFontSize(context, fontSize: fontSize ?? 14),
         fontFamily: AppFonts.cairo,
         fontWeight: fontWeight ?? FontWeight.w400,
@@ -70,7 +70,7 @@ abstract class AppTextStyles {
         bool underLine = false,
         FontWeight? fontWeight}) {
     return TextStyle(
-        color: color ?? kTextColor,
+        color: color ?? AppColors.kTextColor,
         fontSize: getResponsiveFontSize(context, fontSize: fontSize ?? 12),
         fontFamily: AppFonts.cairo,
         fontWeight: fontWeight ?? FontWeight.w500,
@@ -84,7 +84,7 @@ abstract class AppTextStyles {
         bool underLine = false,
         FontWeight? fontWeight}) {
     return TextStyle(
-        color: color ?? kTextColor,
+        color: color ?? AppColors.kTextColor,
         fontSize: getResponsiveFontSize(context, fontSize: fontSize ?? 14),
         fontFamily: AppFonts.cairo,
         fontWeight: fontWeight ?? FontWeight.w500,
@@ -94,7 +94,7 @@ abstract class AppTextStyles {
 
   static TextStyle styleRegular20(BuildContext context, {Color? color}) {
     return TextStyle(
-      color: color ?? kTextColor,
+      color: color ?? AppColors.kTextColor,
       fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontFamily: AppFonts.cairo,
       fontWeight: FontWeight.w400,
@@ -103,7 +103,7 @@ abstract class AppTextStyles {
 
   static TextStyle styleRegular10(BuildContext context, {Color? color}) {
     return TextStyle(
-      color: color ?? kTextColor,
+      color: color ?? AppColors.kTextColor,
       fontSize: getResponsiveFontSize(context, fontSize: 10),
       fontFamily: AppFonts.cairo,
       fontWeight: FontWeight.w400,
@@ -116,7 +116,7 @@ abstract class AppTextStyles {
         double? fontSize,
       }) {
     return TextStyle(
-      color: color ?? kTextColor,
+      color: color ?? AppColors.kTextColor,
       fontSize: getResponsiveFontSize(context, fontSize: fontSize ?? 20),
       fontFamily: AppFonts.cairo,
       fontWeight: FontWeight.bold,
@@ -128,7 +128,7 @@ abstract class AppTextStyles {
   static TextStyle styleRegular16(BuildContext context,
       {Color? color, FontWeight? fontWeight}) {
     return TextStyle(
-      color: color ?? kTextColor,
+      color: color ?? AppColors.kTextColor,
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: AppFonts.cairo,
       fontWeight: fontWeight ?? FontWeight.normal,
@@ -138,7 +138,7 @@ abstract class AppTextStyles {
   static TextStyle styleBold32(BuildContext context,
       {Color? color, FontWeight? fontWeight}) {
     return TextStyle(
-      color: color ?? kTextColor,
+      color: color ?? AppColors.kTextColor,
       fontSize: getResponsiveFontSize(context, fontSize: 32),
       fontFamily: AppFonts.cairo,
       fontWeight: fontWeight ?? FontWeight.bold,
@@ -148,7 +148,7 @@ abstract class AppTextStyles {
   static TextStyle styleBold36(BuildContext context,
       {Color? color, FontWeight? fontWeight}) {
     return TextStyle(
-      color: color ?? kTextColor,
+      color: color ?? AppColors.kTextColor,
       fontSize: getResponsiveFontSize(context, fontSize: 36),
       fontFamily: AppFonts.cairo,
       fontWeight: fontWeight ?? FontWeight.bold,
@@ -159,7 +159,7 @@ abstract class AppTextStyles {
 
   static TextStyle styleBold24(BuildContext context, {Color? color}) {
     return TextStyle(
-      color: color ?? kTextColor,
+      color: color ?? AppColors.kTextColor,
       fontSize: getResponsiveFontSize(context, fontSize: 24),
       fontFamily: AppFonts.cairo,
       fontWeight: FontWeight.bold,
@@ -168,7 +168,7 @@ abstract class AppTextStyles {
 
   static TextStyle styleBold29(BuildContext context, {Color? color}) {
     return TextStyle(
-      color: color ?? kTextColor,
+      color: color ?? AppColors.kTextColor,
       fontSize: getResponsiveFontSize(context, fontSize: 29),
       fontFamily: AppFonts.cairo,
       fontWeight: FontWeight.bold,
@@ -178,7 +178,7 @@ abstract class AppTextStyles {
   static TextStyle styleRegular18(BuildContext context,
       {Color? color, FontWeight? fontWeight}) {
     return TextStyle(
-      color: color ?? kTextColor,
+      color: color ?? AppColors.kTextColor,
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontFamily: AppFonts.cairo,
       fontWeight: fontWeight ?? FontWeight.normal,
@@ -188,7 +188,7 @@ abstract class AppTextStyles {
   static TextStyle styleMedium18(BuildContext context,
       {Color? color, FontWeight? fontWeight}) {
     return TextStyle(
-      color: color ?? kTextColor,
+      color: color ?? AppColors.kTextColor,
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontFamily: AppFonts.cairo,
       fontWeight: fontWeight ?? FontWeight.w500,
